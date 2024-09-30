@@ -1,3 +1,16 @@
+# Githib push commands
+git add .
+git commit -m "Your message here"
+git push
+
+
+
+
+
+
+
+
+
 /* 
 React Element
 JSX  ==> Bbael transpiles it to React.createElement() (coverted by Babel in Parcel) - JsObject ==> HTMLElement
@@ -71,3 +84,4 @@ export const LOGO_URL = "https://img.freepik.com/premium-vector/shopping-logo-de
 (Normal JS utility function)
 - useState() - Superpowerful State Variables in React.
 - useEffect()
+
