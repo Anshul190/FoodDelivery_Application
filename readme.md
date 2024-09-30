@@ -3,14 +3,6 @@ git add .
 git commit -m "Your message here"
 git push
 
-
-
-
-
-
-
-
-
 /* 
 React Element
 JSX  ==> Bbael transpiles it to React.createElement() (coverted by Babel in Parcel) - JsObject ==> HTMLElement
