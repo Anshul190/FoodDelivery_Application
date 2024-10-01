@@ -34,7 +34,6 @@ const Body = () => {
     return ListofRestraunts.length === 0 ? <Shimmer/> : (
         <div className="Body">
             <div className="filter">
-                
                 <div className="search-component">
                     <input type="text" className="search-box" value={SearchText} onChange={(e) => {
                         setSearchText(e.target.value);
