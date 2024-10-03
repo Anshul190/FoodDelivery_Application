@@ -7,6 +7,7 @@ Our food delivery platform is built using ReactJS for interactive and efficient 
 📲 Dynamic User Interface: ReactJS enables a smooth, interactive interface, allowing users to browse menus, customize orders, and navigate with ease.
 🤖 Intuitive Search and Filters: Advanced filtering options let users quickly find restaurants or dishes based on cuisine, rating, and dietary preferences.
 🛠️ Customizable Food Preferences: Users can personalize their orders with easy-to-use customization options, ensuring they get exactly what they want.
+
 🔗 Links
 Project
 
