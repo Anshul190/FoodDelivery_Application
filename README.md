@@ -1,4 +1,4 @@
-🖥️ Food_Delivery_Application
+🖥️ FoodDelivery_Application
 Our food delivery platform is built using ReactJS for interactive and efficient user experiences, TailwindCSS for sleek and responsive design, and JavaScript to power seamless functionality. Together, these technologies create a fast, user-friendly, and visually appealing solution for food delivery."
 
 🌟 Key Features
