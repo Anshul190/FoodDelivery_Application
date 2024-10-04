@@ -34,10 +34,6 @@ const appRouter = createBrowserRouter([{
         element: <Contact/>,
     },
     {
-        path: "/Random",
-        element: <Random/>,
-    },
-    {
         path: "/Restaurant/:resId",
         element: <RestaurantMenu />,
     }],
