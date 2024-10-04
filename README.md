@@ -9,7 +9,6 @@ Our food delivery platform is built using ReactJS for interactive and efficient 
 🛠️ Customizable Food Preferences: Users can personalize their orders with easy-to-use customization options, ensuring they get exactly what they want.
 
 🔗 Links
-Project
 
 👥 Developers
 Anshul Singh
