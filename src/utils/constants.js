@@ -7,3 +7,10 @@ export const FACEBOOK_URL = "https://www.facebook.com/swiggy.in/";
 export const TWITTER_URL = "https://x.com/Swiggy";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/swiggyindia/?hl=en";
+
+// export const MENU_API = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.66590&lng=77.00440&";
+
+export const MENU_API = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.66590&lng=77.00440&restaurantId=";
+
+
+// https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.66590&lng=77.00440&restaurantId=610732&catalog_qa=undefined&submitAction=ENTER

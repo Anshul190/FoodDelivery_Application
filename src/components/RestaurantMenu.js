@@ -1,18 +1,21 @@
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
 
 const RestaurantMenu = () =>{
 
     const [resInfo, setresInfo] = useState(null);
+    const {resId} = useParams();
+    
 
     useEffect(() => {
         fetchMenu();
     },[])
 
     const fetchMenu = async () =>{
-        const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.66590&lng=77.00440&restaurantId=38394&catalog_qa=undefined&submitAction=ENTER");
+        const data = await fetch(MENU_API + resId);
         const json = await data.json();
-        console.log(json);
         setresInfo(json.data);
     }
 
@@ -21,16 +24,17 @@ const RestaurantMenu = () =>{
     } 
 
     const {name, cuisines,costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info;
-    const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    console.log(itemCards);
 
     return(
         <div className="menu">
             <h1> {name} </h1>
             <p> {cuisines.join(", ")} - {costForTwoMessage} </p>
             <ul>
-                <li>{itemCards[0].card.info.name}</li>
-                <li>Burgers</li>
-                <li>Diet Coke</li>
+                {itemCards.map((item) => (
+                    <li key= {item.card.info.id}> {item.card.info.name} -- {"Rs. "}{item.card.info.price/100}</li>
+                ))}
             </ul>
         </div>
     )

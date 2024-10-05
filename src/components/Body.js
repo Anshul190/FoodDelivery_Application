@@ -2,6 +2,7 @@ import RestraurantCard from "./RestaurantCard";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 // import resList from "../utils/mockdata";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     // Local State Variable - Super powerful variable
@@ -21,6 +22,7 @@ const Body = () => {
         console.log(json);
         setListofRestraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredListofRestraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(data); //display API data in console.
     };
 
     /*
@@ -60,7 +62,7 @@ const Body = () => {
 
             <div className="res-container"> 
                 {filteredListofRestraunts.map((restaurant, index) => (
-                    <RestraurantCard key={restaurant.info.id} resData={restaurant} />
+                    <Link to = {"/restaurant/" + restaurant.info.id}><RestraurantCard key={restaurant.info.id} resData={restaurant} /></Link>
                 ))};
             </div>
         </div>
