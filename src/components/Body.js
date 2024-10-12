@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Body = () => {
     // Local State Variable - Super powerful variable
-    const [ListofRestraunts, setListofRestraunts] = useState([]);
+    const [ListofRestraunts, setListofRestraunts] = useState([ ]);
     const [SearchText, setSearchText] = useState("");
     const [filteredListofRestraunts, setfilteredListofRestraunts] = useState([]);
 
@@ -20,20 +20,17 @@ const Body = () => {
 
         const json = await data.json();
         console.log(json);
-        setListofRestraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setfilteredListofRestraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListofRestraunts(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setfilteredListofRestraunts(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(data); //display API data in console.
     };
 
-    /*
-    * Conditional Rendering
-    * if(ListofRestraunts.length === 0){
-    *   return <Shimmer/>
-    * };
-    */
+    if (ListofRestraunts.length === 0){
+        return <Shimmer/>;
+    }
 
     // Ternary Operater
-    return ListofRestraunts.length === 0 ? <Shimmer/> : (
+    return  (
         <div className="Body">
             <div className="filter">
                 <div className="search-component">
