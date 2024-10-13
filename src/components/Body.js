@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 // import resList from "../utils/mockdata";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     // Local State Variable - Super powerful variable
@@ -20,10 +21,19 @@ const Body = () => {
 
         const json = await data.json();
         console.log(json);
-        setListofRestraunts(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setfilteredListofRestraunts(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListofRestraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setfilteredListofRestraunts(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(data); //display API data in console.
     };
+
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false){
+        return (
+            <h1>"You are Offline. Please check your internet connection"</h1>
+        );
+    };
+
 
     if (ListofRestraunts.length === 0){
         return <Shimmer/>;
