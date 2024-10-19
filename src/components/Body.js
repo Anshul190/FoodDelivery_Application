@@ -7,7 +7,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     // Local State Variable - Super powerful variable
-    const [ListofRestraunts, setListofRestraunts] = useState([ ]);
+    const [ListofRestraunts, setListofRestraunts] = useState([]);
     const [SearchText, setSearchText] = useState("");
     const [filteredListofRestraunts, setfilteredListofRestraunts] = useState([]);
 
@@ -42,22 +42,21 @@ const Body = () => {
     // Ternary Operater
     return  (
         <div className="Body">
-            <div className="filter">
-                <div className="search-component">
-                    <input type="text" className="search-box" value={SearchText} onChange={(e) => {
+            <div className="filter, flex">
+                <div className="search-component, m-4 p-4">
+                    <input type="text" className="search-box, border-black border-solid bg-transparent" value={SearchText} onChange={(e) => {
                         setSearchText(e.target.value);
                     }}/>
-                    <button className="search" onClick={() => {
+                    <button className="search, px-4 py-2 bg-orange-200 m-4 rounded-lg" onClick={() => {
 
                         const filteredRestraunts = ListofRestraunts.filter(
                             (res) => res.info.name.toLowerCase().includes(SearchText.toLowerCase())
                         )
                         setfilteredListofRestraunts(filteredRestraunts)
-
                     }}>Search</button>
                 </div>
-
-                <button className="filter-btn" onClick={() => {
+                <div className="search, px-4 py-2 m-4 flex items-center">
+                <button className="filter-btn, rounded-lg bg-orange-200 m-4 px-2 py-2" onClick={() => {
                     const filteredList = ListofRestraunts.filter(
                         (res) => res.info.avgRating > 4.3
                     );
@@ -65,9 +64,10 @@ const Body = () => {
                 }}>
                     Top Rated Restaurants
                 </button>
+                </div>
             </div>
 
-            <div className="res-container"> 
+            <div className="res-container, flex flex-wrap px-0.5"> 
                 {filteredListofRestraunts.map((restaurant, index) => (
                     <Link to = {"/restaurant/" + restaurant.info.id}><RestraurantCard key={restaurant.info.id} resData={restaurant} /></Link>
                 ))};
